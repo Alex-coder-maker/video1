@@ -1,0 +1,27 @@
+GUÍA EXPLICATIVA DEL PROYECTO: PORTAL WEB MULTIMEDIA
+
+1. Justificación de Etiquetas Semánticas HTML5
+En este proyecto se utilizó código semántico con el propósito de otorgar un significado estructural claro al contenido, mejorando la accesibilidad y el posicionamiento SEO:
+
+<header>: Delimita el encabezado principal, título del portal y contenedor de la navegación general.
+
+<nav>: Agrupa el menú de enlaces a las secciones internas del documento.
+
+<main>: Representa el núcleo del contenido principal de la página.
+
+<section>: Utilizado para fragmentar temáticamente el portal (Resumen, Ejes, Podcast, Citas, Galería y Conclusiones).
+
+<article>: Encapsula piezas de información independientes como el resumen ejecutivo y las secciones de conclusiones.
+
+<figure> y <figcaption>: Utilizados para estructurar elementos multimedia (imágenes, videos embebidos e incrustación de citas) acompañados de sus descripciones contextuales.
+
+<footer>: Contiene la información de derechos de autor y pie de página.
+
+2. Estrategia Matemática y CSS para Maquetación Fluida Sin Flexbox/Grid ni Media Queries
+Para garantizar la adaptabilidad continua y fluida de la interfaz respetando las restricciones del proyecto, se aplicaron las siguientes estrategias tradicionales:
+
+Unidades Relativas (%): El contenedor principal <main> posee un ancho relativo (width: 90%) combinado con un max-width: 1100px. Esto permite que el sitio ocupe el 90% de la pantalla en dispositivos móviles y se auto-centre en pantallas grandes de escritorio.
+
+Comportamiento Inline-Block Adaptable: Los elementos de la galería (.item-galeria) y de la navegación usaron display: inline-block. Al asignar a las imágenes un ancho porcentual del 45% pero con una restricción mínima min-width: 260px, la interfaz reorganiza automáticamente las tarjetas de la galería a 1 sola columna cuando el espacio visible disminuye, sin requerir @media queries.
+
+Multimedia Proporcional: Todas las imágenes y marcos de video emplean max-width: 100% e height: auto para redimensionarse proporcionalmente según el contenedor padre. El <iframe> del video utiliza una técnica clásica de envoltorio con padding-bottom: 56.25% para mantener fija la relación de aspecto 16:9 de forma completamente fluida.
